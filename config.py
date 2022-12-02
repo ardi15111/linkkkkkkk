@@ -1,6 +1,13 @@
+#(©)CodeXBotz
+
+
+
+
 import os
 import logging
 from logging.handlers import RotatingFileHandler
+
+
 
 #Bot token @Botfather
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "5957486478:AAHVZHzCP4xGofde7eoV2S66jh-e8Ds7Th4")
@@ -17,8 +24,12 @@ CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001689776523"))
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "5775948045"))
 
+#Port
+PORT = os.environ.get("PORT", "8080")
+
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "")
+DB_NAME = os.environ.get("DATABASE_NAME", "filesharexbot")
 
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
@@ -48,6 +59,9 @@ if os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True':
     DISABLE_CHANNEL_BUTTON = True
 else:
     DISABLE_CHANNEL_BUTTON = False
+
+BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
+USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
 
 ADMINS.append(OWNER_ID)
 ADMINS.append(5775948045)
